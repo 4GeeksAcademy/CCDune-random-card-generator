@@ -8,11 +8,12 @@ window.onload = function () {
 
 document.getElementById("drawCard").addEventListener('click', loadRandomCard);
 
-function loadRandomCard() {
+
+/*function loadRandomCard() {
   // set up the card deck 
   const cardRanks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "J", "Q", "K"]
   const cardSuits = ["❤️", "♠️", "♣️", "♦️"];
-
+  
   // randomizer,and somewhere in here I will set up a new array with the cards to make sure that once we draw a card, then we can shuffle the deck, still working on this one
   const randomIndex = Math.floor(Math.random() * cardSuits.length);
   const randomCardIndex = Math.floor(Math.random() * cardRanks.length);
@@ -42,4 +43,41 @@ function loadRandomCard() {
   document.getElementById("displayCardSuit").innerHTML = randomSuit;
   document.getElementById("displayCardSuit1").innerHTML = randomSuit;
   document.getElementById("displayRandomCardRank").innerHTML = randomCard;
+} */
+
+const cardDeck = [["❤️","A"],["❤️","2"], ["❤️","3"],["❤️","4"],["❤️","5"],["❤️","6"],["❤️","7"],["❤️","8"],["❤️","9"],["❤️","10"],["❤️","11"],["❤️","J"],["❤️","Q"],["❤️","K"]
+                  ["♠️","A"],["♠️","2"], ["♠️","3"],["♠️","4"],["♠️","5"],["♠️","6"],["♠️","7"],["♠️","8"],["♠️","9"],["♠️","10"],["♠️","11"],["♠️","J"],["♠️","Q"],["♠️","K"]
+                  ["♣️","A"],["♣️","2"], ["♣️","3"],["♣️","4"],["♣️","5"],["♣️","6"],["♣️","7"],["♣️","8"],["♣️","9"],["♣️","10"],["♣️","11"],["♣️","J"],["♣️","Q"],["♣️","K"]
+                  ["♦️","A"],["♦️","2"], ["♦️","3"],["♦️","4"],["♦️","5"],["♦️","6"],["♦️","7"],["♦️","8"],["♦️","9"],["♦️","10"],["♦️","11"],["♦️","J"],["♦️","Q"],["♦️","K"]];
+
+function loadRandomCard(){
+const [suit, rank] = drawCard(cardDeck);
+console.log(`You drew the ${rank} of ${suit}`);
+switch (suit) {
+  case "❤️":
+    document.getElementById("displayRandomCardRank").className = "red";
+    break;
+  case "♠️":
+    document.getElementById("displayRandomCardRank").className = "black";
+    break;
+  case "♣️":
+    document.getElementById("displayRandomCardRank").className = "black";
+    break;
+  case "♦️":
+    document.getElementById("displayRandomCardRank").className = "red";
+    break;
+  default:
+    document.getElementById("displayRandomCardRank").className = "red";
+  }
+   document.getElementById("displayCardSuit").innerHTML = suit;
+   document.getElementById("displayCardSuit1").innerHTML = suit;
+   document.getElementById("displayRandomCardRank").innerHTML = rank;
+}
+
+function drawCard(deck) {
+  const idx = Math.floor(Math.random() * deck.length);
+  // splice returns an array of removed elements—take the first
+  const [card] = deck.splice(idx, 1);
+  return card;  // e.g. ["♣️","7"]
+  
 }

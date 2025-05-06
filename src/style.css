@@ -12,11 +12,48 @@ body{
     color: black;
 }
 
-.suit{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 4rem;
-}
 
-.upsideDown{
+.custom-card-header {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  
+  .custom-card-body {
+    width: 250px;
+    height: 330px;
+  }
+  
+  .suit-top {
+    margin-right: auto;
+    height: 110px;
+  }
+
+  .suit-top h1{
+    font-size: 4.2rem;
+  }
+  
+  .rank-center {
+    padding-top: 30px;
+    height: 110px;
+  }
+  
+  .rank-center h1{
+    font-size: 2.5rem;
+  }
+
+  .suit-bottom {
+    margin-left: auto;
+    height: 110px;
     transform: rotate(180deg);
-}
+  }
+
+  .suit-bottom h1{
+    font-size: 4.2rem;
+  }
+  
+  .button-row {
+    margin-top: 10px;
+  }
+  
