@@ -8,6 +8,10 @@ body{
     color: red;
 }
 
+.black{
+    color: black;
+}
+
 .suit{
     font-family: 'Courier New', Courier, monospace;
     font-size: 4rem;
