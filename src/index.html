@@ -7,30 +7,37 @@
     />
   </head>
   <body>
+    
     <!-- Write your HTML code here, you can delete everything withing the body tags -->
     <div class="container-fluid mb-12 d-flex justify-content-center">
       <div class="card text-bg-primary" style="width: 250px; height: 350px;">
         <div class="row">
-          <div class="col-1 margin-right:auto">
+          <div class="col-1" style="margin-right:auto">
             <h1 id="displayCardSuit" class="suit"></h1>
           </div>
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-1">
-            <p id="displayRandomCardRank" class="red"></p>
+          <div class="col-3">
+            <p id="displayRandomCardRank" class="red">10</p>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-1 margin-left: auto">
+          <div class="col-4" style="margin-left: auto">
             <div class="upsideDown">
-              <h1 id="displayCardSuit1" class="suit"></h1>
+              </div>
+              <h1 id="displayCardSuit1" class="suit"><br><br><br></h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <button type="button" class="btn btn-primary" id="drawCard">Pick another card</button>
             </div>
           </div>
         </div>
       </div>
-    </div>
+       
 
     <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
     <script type="module" src="/app.js"></script>
