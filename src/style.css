@@ -1,5 +1,18 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: green;
+}
+
+.red{
+    color: red;
+}
+
+.suit{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+}
+
+.upsideDown{
+    transform: rotate(180deg);
 }
