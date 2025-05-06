@@ -20,6 +20,8 @@ function loadRandomCard() {
   const randomSuit = cardSuits[randomIndex];
   const randomCard = cardRanks[randomCardIndex];
   console.log(randomSuit);
+  
+  //obviously this code changes the css style so that the text color is appropriate
   switch (randomSuit) {
   case "❤️":
     document.getElementById("displayRandomCardRank").className = "red";
@@ -34,13 +36,10 @@ function loadRandomCard() {
     document.getElementById("displayRandomCardRank").className = "red";
     break;
   default:
-    console.log("Not a valid day.");
-}
-
+    document.getElementById("displayRandomCardRank").className = "red";
+  }
 
   document.getElementById("displayCardSuit").innerHTML = randomSuit;
   document.getElementById("displayCardSuit1").innerHTML = randomSuit;
   document.getElementById("displayRandomCardRank").innerHTML = randomCard;
-  //document.getElementById('myBox')
-  //box.className = isModeA ? 'mode-a' : 'mode-b';
 }

@@ -12,36 +12,31 @@
      <div class="container-fluid d-flex justify-content-center">
       <div class="row">
         <div class="card text-bg-primary" style="width: 250px; height: 50 px; margin-bottom: 10px; margin-top: 10px;">
-          <p>Random Card Generator</p>
+          <h5>Random Card Generator</h5>
         </div>
       </div>
      </div>
     <div class="container-fluid mb-12 d-flex justify-content-center">
       <div class="card text-bg-primary" style="width: 250px; height: 330px;">
         <div class="row">
-          <div class="col-1" style="margin-right:auto; margin: top 20px; height: 110px;">
-            <h1 id="displayCardSuit" class="suit"></h1>
+          <div class="col-1 d-flex align-items-center" style="margin-right:auto; height: 110px;">
+            <h1 id="displayCardSuit" class="suit mx-auto"></h1>
           </div>
         </div>
 
         <div class="row justify-content-center">
           <div class="col-3" style="height: 110px;">
-            <p id="displayRandomCardRank" class="red">10</p>
+            <h1 id="displayRandomCardRank" class="red">10</h1>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-4" style="margin-left: auto; height: 110px;">
-            <div class="upsideDown">
-              </div>
-              <h1 id="displayCardSuit1" class="suit"><br><br><br></h1>
-            </div>
+          <div class="col-4 d-flex align-items-center" style="margin-left: auto; height: 110px;">
+            <h1 id="displayCardSuit1" class="suit upsideDown mx-auto"></h1>
           </div>
-          <div class="row">
-            <div class="col-4">
-              <br><br>
-              <button type="button" class="mb-12 btn btn-primary" id="drawCard">Pick a card</button>
-            </div>
+          </div>
+          <div class="row" style="margin-top: 10px;">
+              <button type="button" class="btn btn-primary" id="drawCard">Pick a card</button>
           </div>
         </div>
       </div>
