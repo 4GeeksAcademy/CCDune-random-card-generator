@@ -43,41 +43,99 @@ document.getElementById("drawCard").addEventListener('click', loadRandomCard);
   document.getElementById("displayCardSuit").innerHTML = randomSuit;
   document.getElementById("displayCardSuit1").innerHTML = randomSuit;
   document.getElementById("displayRandomCardRank").innerHTML = randomCard;
-} */
-
-const cardDeck = [["❤️","A"],["❤️","2"], ["❤️","3"],["❤️","4"],["❤️","5"],["❤️","6"],["❤️","7"],["❤️","8"],["❤️","9"],["❤️","10"],["❤️","11"],["❤️","J"],["❤️","Q"],["❤️","K"]
-                  ["♠️","A"],["♠️","2"], ["♠️","3"],["♠️","4"],["♠️","5"],["♠️","6"],["♠️","7"],["♠️","8"],["♠️","9"],["♠️","10"],["♠️","11"],["♠️","J"],["♠️","Q"],["♠️","K"]
-                  ["♣️","A"],["♣️","2"], ["♣️","3"],["♣️","4"],["♣️","5"],["♣️","6"],["♣️","7"],["♣️","8"],["♣️","9"],["♣️","10"],["♣️","11"],["♣️","J"],["♣️","Q"],["♣️","K"]
-                  ["♦️","A"],["♦️","2"], ["♦️","3"],["♦️","4"],["♦️","5"],["♦️","6"],["♦️","7"],["♦️","8"],["♦️","9"],["♦️","10"],["♦️","11"],["♦️","J"],["♦️","Q"],["♦️","K"]];
+  document.getElementById("drawCard").innerHTML = "Pick a card";
+  document.getElementById("customCardHeaderText").innerHTML = "Random Card Generator"
+} 
+  */
+ const cardDeck =   [["❤️","A"]
+                     ["❤️","2"], 
+                     ["❤️","3"],
+                     ["❤️","4"],
+                     ["❤️","5"],
+                     ["❤️","6"],
+                     ["❤️","7"],
+                     ["❤️","8"],
+                     ["❤️","9"],
+                     ["❤️","10"],
+                     ["❤️","11"],
+                     ["❤️","J"],
+                     ["❤️","Q"],
+                     ["❤️","K"]
+                     ["♠️","A"],
+                     ["♠️","2"], 
+                     ["♠️","3"],
+                     ["♠️","4"],
+                     ["♠️","5"],
+                     ["♠️","6"],
+                     ["♠️","7"],
+                     ["♠️","8"],
+                     ["♠️","9"],
+                     ["♠️","10"],
+                     ["♠️","11"],
+                     ["♠️","J"],
+                     ["♠️","Q"],
+                     ["♠️","K"]
+                     ["♣️","A"],
+                     ["♣️","2"], 
+                     ["♣️","3"],
+                     ["♣️","4"],
+                     ["♣️","5"],
+                     ["♣️","6"],
+                     ["♣️","7"],
+                     ["♣️","8"],
+                     ["♣️","9"],
+                     ["♣️","10"],
+                     ["♣️","11"],
+                     ["♣️","J"],
+                     ["♣️","Q"],
+                     ["♣️","K"]
+                     ["♦️","A"],
+                     ["♦️","2"], 
+                     ["♦️","3"],
+                     ["♦️","4"],
+                     ["♦️","5"],
+                     ["♦️","6"],
+                     ["♦️","7"],
+                     ["♦️","8"],
+                     ["♦️","9"],
+                     ["♦️","10"],
+                     ["♦️","11"],
+                     ["♦️","J"],
+                     ["♦️","Q"],
+                     ["♦️","K"]];
 
 function loadRandomCard(){
-const [suit, rank] = drawCard(cardDeck);
-console.log(`You drew the ${rank} of ${suit}`);
-switch (suit) {
-  case "❤️":
-    document.getElementById("displayRandomCardRank").className = "red";
-    break;
-  case "♠️":
-    document.getElementById("displayRandomCardRank").className = "black";
-    break;
-  case "♣️":
-    document.getElementById("displayRandomCardRank").className = "black";
-    break;
-  case "♦️":
-    document.getElementById("displayRandomCardRank").className = "red";
-    break;
-  default:
-    document.getElementById("displayRandomCardRank").className = "red";
+  const [suit, rank] = drawCard(cardDeck);
+ console.log({suit}, {rank});
+  switch (suit) {
+    case "❤️":
+      document.getElementById("displayRandomCardRank").className = "red";
+      break;
+    case "♠️":
+      document.getElementById("displayRandomCardRank").className = "black";
+      break;
+    case "♣️":
+      document.getElementById("displayRandomCardRank").className = "black";
+      break;
+    case "♦️":
+      document.getElementById("displayRandomCardRank").className = "red";
+      break;
+    default:
+      document.getElementById("displayRandomCardRank").className = "red";
+    }
+     document.getElementById("displayCardSuit").innerHTML = suit;
+     document.getElementById("displayCardSuit1").innerHTML = suit;
+     document.getElementById("displayRandomCardRank").innerHTML = rank;
+     document.getElementById("drawCard").innerHTML = "Pick a card";
+    document.getElementById("customCardHeaderText").innerHTML = "Random Card Generator"
   }
-   document.getElementById("displayCardSuit").innerHTML = suit;
-   document.getElementById("displayCardSuit1").innerHTML = suit;
-   document.getElementById("displayRandomCardRank").innerHTML = rank;
-}
+
+
 
 function drawCard(deck) {
-  const idx = Math.floor(Math.random() * deck.length);
+  const i = Math.floor(Math.random() * deck.length);
   // splice returns an array of removed elements—take the first
-  const [card] = deck.splice(idx, 1);
+  const [card] = deck.splice(i, 1); 
   return card;  // e.g. ["♣️","7"]
-  
 }
+
