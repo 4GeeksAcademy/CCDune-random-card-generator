@@ -5,6 +5,7 @@ window.onload = function () {
   shuffleCards();
   loadRandomCard();
   document.getElementById("drawCard").addEventListener("click", loadRandomCard);
+  
 
   function loadRandomCard() {
     const [suit, rank] = drawCard(cardDeck);
@@ -34,8 +35,8 @@ window.onload = function () {
 
   function drawCard(deck) {
     if (deck.length == 0) {
-      console.log("You have no cards left!");
-      shuffleCards();
+      showShuffleModal();
+
     } else {
       const i = Math.floor(Math.random() * deck.length);
       console.log(i, deck);
@@ -43,6 +44,18 @@ window.onload = function () {
       const [card] = deck.splice(i, 1);
       return card; // e.g. ["♣️","7"]
     }
+  }
+
+  function showShuffleModal(){
+    const modalShuffle = document.getElementById('outOfCards');
+    const myModal = new bootstrap.Modal(modalShuffle);
+    myModal.show();
+    myModal.hide();
+    document.getElementById("shuffleTheCards").addEventListener('click', () => {
+      shuffleCards();  
+      loadRandomCard();  
+      myModal.hide();   
+    }, { once: true }); 
   }
 
   function shuffleCards() {
